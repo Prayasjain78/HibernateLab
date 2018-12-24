@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+  package="com.prayas.hibernate">
+  
+  <class name="Employee" table="myemployees3">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+  <property name="ename"/>
+  <property  name="city"/>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+ </class>
+  <class name="CurrentEmployee" table="cemployees3">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+  <property name="ename"/>
+  <property name="city"/>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+  <property name="feebal" type="double"/>
+  <property name="timings"/>
+  <property name="branch"/>
+  </class>
+  
+  
+  <class name="WeekdayEmployee" table="wdemployees3">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+  <property name="ename"/>
+  <property name="city"></property>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+  <property name="feebal" type="double"/>
+   <property name="timings"/>
+  <property name="branch"/>
+  <property name="qualification"/>
+  <property name="percentage"/>
+  <property name="yop" type="int"/>
+  </class>
+  <class name="WeekendEmployee" table="weemployees3">
+  <id name="eid" column="eid" type="int" >
+  <generator class="increment"/>
+  </id>
+  <property name="ename"/>
+  <property name="city"></property>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+   <property name="timings"/>
+  <property name="branch"/>
+  <property name="wcompany"/>
+  <property name="wcemail"/>
+  <property name="wctc" type="double"/>
+
+  </class>
+  <class name="OldEmployee" table="oemployees1">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+   <property name="ename"/>
+  <property name="city"></property>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+  <property name="ocompany"/>
+  <property name="oemail"/>
+  <property name="octc" type="double"/>
+  </class>
+
+  </hibernate-mapping>

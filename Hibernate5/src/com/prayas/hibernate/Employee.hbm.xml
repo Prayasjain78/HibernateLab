@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+  package="com.prayas.hibernate">
+  
+  <class name="Employee" table="myemployees">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+  <property name="ename"/>
+  <property  name="city"/>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+ 
+  <joined-subclass name="CurrentEmployee" table="cemployees">
+  <key column="eid"/>
+  <property name="feebal" type="double"/>
+  <property name="timings"/>
+  <property name="branch"/>
+  <joined-subclass name="WeekdayEmployee" table="wdemployees">
+  <key column="eid"/>
+  <property name="qualification"/>
+  <property name="percentage"/>
+  <property name="yop" type="int"/>
+  </joined-subclass>
+  <joined-subclass name="WeekendEmployee" table="weemployees">
+  <key column="eid"/>
+  <property name="wcompany"/>
+  <property name="wcemail"/>
+  <property name="wctc" type="double"/>
+  </joined-subclass>
+  </joined-subclass>
+  <joined-subclass name="OldEmployee" table="oemployees">
+  <key column="eid"/>
+  <property name="ocompany"/>
+  <property name="oemail"/>
+  <property name="octc" type="double"/>
+  </joined-subclass>
+
+  </class>
+  </hibernate-mapping>

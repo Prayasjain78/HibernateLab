@@ -1,0 +1,21 @@
+package com.prayas.hibernate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class Lab5B {
+public static void main(String[] args) {
+	Transaction tx=null;
+	try {
+		SessionFactory sf=HibernateUtil.getSessionFactory();
+		Session session=sf.openSession();
+		tx=session.beginTransaction();
+		Employee emp=(Employee)session.load(Employee.class, 1);
+		System.out.println(emp);
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+}
+}

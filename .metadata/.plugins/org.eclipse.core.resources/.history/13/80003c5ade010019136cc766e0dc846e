@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+  package="com.prayas.hibernate">
+  
+  <class name="Employee" table="myemployees" discriminator-value="EMP">
+  <id name="eid" column="eid" type="int">
+  <generator class="increment"/>
+  </id>
+  <discriminator column="emptype"/>
+  <property name="ename"/>
+  <property  name="city"/>
+  <property name="status"/>
+  <property name="totalfee" type="double"/>
+ 
+  <subclass name="CurrentEmployee" discriminator-value="CEMP">
+  
+  <property name="feebal" type="double"/>
+  <property name="timings"/>
+  <property name="branch"/>
+  
+  <subclass name="WeekdayEmployee" discriminator-value="WDEMP">
+  <property name="qualification"/>
+  <property name="percentage"/>
+  <property name="yop" type="int"/>
+  </subclass>
+  
+  <subclass name="WeekendEmployee" discriminator-value="WEEMP">
+  <property name="wcompany"/>
+  <property name="wcemail"/>
+  <property name="wctc" type="double"/>
+  </subclass>
+  </subclass>
+  
+  <subclass name="OldEmployee" discriminator-value="OEMP">
+  <property name="ocompany"/>
+  <property name="oemail"/>
+  <property name="octc" type="double"/>
+  </subclass>
+
+  </class>
+  </hibernate-mapping>

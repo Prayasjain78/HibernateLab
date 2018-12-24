@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HibernateUtil.java&apos; to &apos;HIbernate10/src/com.prayas.hibernate&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate2_Using_Annotation&apos;&#x0D;&#x0A;- Destination element: &apos;HIbernate10/src/com.prayas.hibernate&apos;&#x0D;&#x0A;- Original element: &apos;com.prayas.hibernate.HibernateUtil.java&apos;" description="Copy compilation unit" destination="=HIbernate10/src&lt;com.prayas.hibernate" element1="/src&lt;com.prayas.hibernate{HibernateUtil.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1545048211422" units="1" version="1.0"/>
+</session>
